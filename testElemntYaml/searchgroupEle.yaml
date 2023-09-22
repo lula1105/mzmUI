@@ -1,0 +1,17 @@
+testinfo:
+  info: 打开运营端管理员登录
+  url: /merchant/group
+testStep:
+  - element_info: moozumi-search_id
+    find_type: id
+    operate_type: send_keys
+    info: 输入集团号
+  - element_info: moozumi-search_userEmail
+    find_type: id
+    operate_type: send_keys
+    info: 输入邮箱
+  - element_info: //*[text()='搜索']
+    find_type: xpath
+    operate_type: click
+    info: 点击搜索
+

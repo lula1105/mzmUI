@@ -1,0 +1,22 @@
+testinfo:
+  title:  运营管理员登录测试
+  info: 打开运营端管理员登录
+  url: /merchant
+testStep:
+  - element_info: basic_username
+    find_type: id
+    operate_type: send_keys
+    info: 输入账号
+  - element_info: basic_password
+    find_type: id
+    operate_type: send_keys
+    info: 输入密码
+  - element_info: //*[text()="登 录"]
+    find_type: xpath
+    operate_type: click
+    info: 点击确定
+Check :
+  - element_info: //*[contains(text(),'当前环境 dev')]
+    find_type: xpath
+    check_type: contains
+    info: 检查元素是否存在

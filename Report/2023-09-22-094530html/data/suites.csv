@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Fri Sep 22 09:45:30 CST 2023","Fri Sep 22 09:45:54 CST 2023","23759","testcase","test_search_group","TestSearchGroup","","","test_serach_group[args0]",""
+"passed","Fri Sep 22 09:45:54 CST 2023","Fri Sep 22 09:46:19 CST 2023","25708","testcase","test_search_group","TestSearchGroup","","","test_serach_group[args1]",""
