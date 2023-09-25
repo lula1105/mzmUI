@@ -23,7 +23,7 @@ class loginPageLocators(basicPage):
         beforePath = os.path.dirname(os.path.dirname(__file__))
         #获取维护元素定位的yaml文件
         filePath = beforePath + "\\testElemntYaml\\adminLoginEle.yaml"
-        self.yamlreader = readY.read_oneYamlData(self, filePath)
+        self.yamlreader = readY.ReadYaml().read_oneYamlData(filePath)
         #继承basicpage后实例化类
         bp = basicPage()
         #初始化浏览器驱动打开浏览器

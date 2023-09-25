@@ -7,11 +7,12 @@ from utils.basic_Page import  basicPage
 
 class admin_login(basicPage):
     def __init__(self):
+        super().__init__()
         self.yamlreader=None
         beforePath=os.path.dirname(os.path.dirname(__file__))
         #获取输入的数据
         filePath = beforePath + "\\testDataYaml\\adminLoginData.yaml"
-        self.yamlreader= readY.read_oneYamlData(self,filePath)
+        self.yamlreader= readY.ReadYaml().read_oneYamlData(filePath)
     def login(self):
         username=self.yamlreader["data"]["userName"]
         password=self.yamlreader["data"]["passWord"]
