@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 import pytest
-import self
-
 import utils.readYaml as readY
 import os
 import logging
