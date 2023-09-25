@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pytest
 import self
 import utils.readYaml as readY

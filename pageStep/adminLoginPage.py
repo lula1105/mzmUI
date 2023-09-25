@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import utils.readYaml as readY
 import os
 from config import config

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import utils.readYaml as readY
 import os
 from utils.basic_Page import basicPage

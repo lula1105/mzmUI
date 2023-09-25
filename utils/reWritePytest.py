@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import pytest
 from selenium import webdriver
 import os
@@ -6,15 +7,15 @@ _driver=None
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     '''
-    »ñÈ¡Ã¿¸öÓÃÀı×´Ì¬µÄ¹³×Óº¯Êı
+    è·å–æ¯ä¸ªç”¨ä¾‹çŠ¶æ€çš„é’©å­å‡½æ•°
     :param item:
     :param call:
     :return:
     '''
-    # »ñÈ¡¹³×Ó·½·¨µÄµ÷ÓÃ½á¹û
+    # è·å–é’©å­æ–¹æ³•çš„è°ƒç”¨ç»“æœ
     outcome = yield
     rep = outcome.get_result()
-    # ½ö½ö»ñÈ¡ÓÃÀıcall Ö´ĞĞ½á¹ûÊÇÊ§°ÜµÄÇé¿ö, ²»°üº¬ setup/teardown
+    # ä»…ä»…è·å–ç”¨ä¾‹call æ‰§è¡Œç»“æœæ˜¯å¤±è´¥çš„æƒ…å†µ, ä¸åŒ…å« setup/teardown
     if rep.when == "call" and rep.failed:
         mode = "a" if os.path.exists("failures") else "w"
         with open("failures", mode) as f:
@@ -24,12 +25,12 @@ def pytest_runtest_makereport(item, call):
             else:
                 extra = ""
             f.write(rep.nodeid + extra + "\n")
-        # Ìí¼Óallure±¨¸æ½ØÍ¼
+        # æ·»åŠ allureæŠ¥å‘Šæˆªå›¾
         if hasattr(_driver, "get_screenshot_as_png"):
-            with allure.step('Ìí¼ÓÊ§°Ü½ØÍ¼...'):
-                allure.attach(_driver.get_screenshot_as_png(), "Ê§°Ü½ØÍ¼", allure.attachment_type.PNG)
+            with allure.step('æ·»åŠ å¤±è´¥æˆªå›¾...'):
+                allure.attach(_driver.get_screenshot_as_png(), "å¤±è´¥æˆªå›¾", allure.attachment_type.PNG)
 
-# ÅäÖÃä¯ÀÀÆ÷Çı¶¯£¬²»ÏÔÊ¾ä¯ÀÀÆ÷Ö´ĞĞ¹ı³Ì
+# é…ç½®æµè§ˆå™¨é©±åŠ¨ï¼Œä¸æ˜¾ç¤ºæµè§ˆå™¨æ‰§è¡Œè¿‡ç¨‹
 @pytest.fixture(scope="session")
 def driver():
     global d

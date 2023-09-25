@@ -1,21 +1,24 @@
+# -*- coding: utf-8 -*-
+
+
 import os
 import pytest
 import datetime
 
 
 def run_all():
-    # -s£ºÏÔÊ¾ÓÃÀıÖĞµÄÊä³ö
-    # -v£ºÊä³ö¸üÏêÏ¸µÄÓÃÀıÖ´ĞĞĞÅÏ¢
-    # __file__£º±¾ÎÄ¼ş
-    # Éú³ÉYYYY-mm-dd-HHMMSSµÄÊ±¼ä´Á
+    # -sï¼šæ˜¾ç¤ºç”¨ä¾‹ä¸­çš„è¾“å‡º
+    # -vï¼šè¾“å‡ºæ›´è¯¦ç»†çš„ç”¨ä¾‹æ‰§è¡Œä¿¡æ¯
+    # __file__ï¼šæœ¬æ–‡ä»¶
+    # ç”ŸæˆYYYY-mm-dd-HHMMSSçš„æ—¶é—´æˆ³
     now = datetime.datetime.now()
     time_str = now.strftime("%Y-%m-%d-%H%M%S")
     # pytest.main(['--alluredir','./report'])
-    # ´Ë´¦ÃüÁî --alluredir Éú³ÉÁË±¨¸æµÄÔ­Ê¼ÎÄ¼ş
+    # æ­¤å¤„å‘½ä»¤ --alluredir ç”Ÿæˆäº†æŠ¥å‘Šçš„åŸå§‹æ–‡ä»¶
     pytest.main(["-vs", "--alluredir", "./Report/{}xml".format(time_str)])
-    # ´Ë´¦ÃüÁî allure generate ½«Ç°ÃæÉú³ÉµÄjsonÎÄ¼ş×ª»»ÎªhtmlµÄ±¨¸æ
+    # æ­¤å¤„å‘½ä»¤ allure generate å°†å‰é¢ç”Ÿæˆçš„jsonæ–‡ä»¶è½¬æ¢ä¸ºhtmlçš„æŠ¥å‘Š
     os.system("allure generate ./Report/{}xml -o ./Report/{}html --clean".format(time_str, time_str))
-    # Éú³ÉµÄ±¨¸æindex.html²»ÄÜÖ±½ÓÓÃChrome´ò¿ª£¬´ò¿ªºó¿´²»µ½ÄÚÈİ£¬ĞèÒªÓÃallure open´ò¿ª²ÅÄÜäÖÈ¾³öÑùÊ½ºÍÏÔÊ¾ÄÚÈİ
+    # ç”Ÿæˆçš„æŠ¥å‘Šindex.htmlä¸èƒ½ç›´æ¥ç”¨Chromeæ‰“å¼€ï¼Œæ‰“å¼€åçœ‹ä¸åˆ°å†…å®¹ï¼Œéœ€è¦ç”¨allure openæ‰“å¼€æ‰èƒ½æ¸²æŸ“å‡ºæ ·å¼å’Œæ˜¾ç¤ºå†…å®¹
     os.system("allure open ./Report/{}html".format(time_str))
 
 

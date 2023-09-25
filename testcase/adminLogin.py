@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from pageStep.adminLoginPage import loginPageLocators
 import utils.readYaml as readY
 import os

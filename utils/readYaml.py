@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import  yaml
 class ReadYaml(object):
     """初始化文件"""
