@@ -19,7 +19,7 @@ def run_all():
     # 此处命令 allure generate 将前面生成的json文件转换为html的报告
     os.system("allure generate ./Report/{}xml -o ./Report/{}html --clean".format(time_str, time_str))
     # 生成的报告index.html不能直接用Chrome打开，打开后看不到内容，需要用allure open打开才能渲染出样式和显示内容
-    os.system("allure open ./Report/{}html".format(time_str))
+    #os.system("allure open ./Report/{}html".format(time_str))
 
 
 

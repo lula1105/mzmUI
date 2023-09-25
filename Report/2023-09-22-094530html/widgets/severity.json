@@ -1,1 +1,0 @@
-[{"uid":"1a410d1608be981","name":"test_serach_group[args0]","time":{"start":1695347130400,"stop":1695347154159,"duration":23759},"status":"failed","severity":"normal"},{"uid":"fe97f20d857f8b01","name":"test_serach_group[args1]","time":{"start":1695347154231,"stop":1695347179939,"duration":25708},"status":"passed","severity":"normal"}]
